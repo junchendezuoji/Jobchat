@@ -7,12 +7,16 @@
 #### Usage
 
 - 项目克隆
+
 `git clone url`
 - 项目依赖包安装
+
 `npm install`
 - 项目启动，浏览器访问**localhost:8000**
+
 `npm start`
 - 打包编译生成静态资源
+
 `npm build`
 
 ---
@@ -22,25 +26,34 @@
 ##### 前端支撑
 
 - UI框架
+
 用到`antd-design`里面的`antd-mobile`组件库
 - 状态管理
+
 使用Redux进行状态管理
 - 路由
+
 用React-router4进行路由管理
 - 异步请求
+
 使用axios进行异步请求
 - 脚手架
+
 React下面的create-react-app脚手架
 - 第三方组件
+
 要用到一些第三方库
 
 ##### 后端支撑
 
 - Express
+
 	接口开发
 - Socket.io
+
 	聊天实时通信
 - Mongodb
+
 	数据存储
 
 ---
