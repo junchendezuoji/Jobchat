@@ -14,7 +14,7 @@ module.exports = {
   }, //全局变量的设置
   "env": {
     "node": true,
-    "es6": true,
+    "es6": true,  //允许es6语法
     "mocha": true //测试框架
   } //环境
 };
