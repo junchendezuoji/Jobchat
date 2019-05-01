@@ -9,6 +9,7 @@ import 'antd-mobile/dist/antd-mobile.css'
 import Login from './container/login/login'
 import Register from './container/register/register'
 import PublisherInfo from './container/publisherinfo/publisherinfo'
+import HunterInfo from './container/hunterinfo/hunterinfo'
 import AuthRoute from './component/authroute/authroute'
 import reducers from  './reducer'
 import './config'
@@ -29,6 +30,7 @@ ReactDom.render(
                 <AuthRoute></AuthRoute>
                 <Switch>
                     <Route path='/publisherinfo' component={PublisherInfo}></Route>
+                    <Route path='/hunterinfo' component={HunterInfo}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
                 </Switch>   

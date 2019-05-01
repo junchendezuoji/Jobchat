@@ -10,14 +10,12 @@ import { update } from '../../redux/user.redux'
     state => state.user,
     {update}
 )
-export default class PublisherInfo extends React.Component {
+export default class HunterInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title:'',
-            desc:'',
-            company:'',
-            money:''
+            desc:''
         }
     }
 
@@ -31,12 +29,10 @@ export default class PublisherInfo extends React.Component {
         return (
             <div>
                     {redirect && redirect !== path ? <Redirect to={redirect}></Redirect> :null}
-                    <NavBar mode="dark">发布者信息完善页</NavBar>
+                    <NavBar mode="dark">求职者信息完善页</NavBar>
                     <AvatarSelector selectAvatar = {(imgname) => {this.setState({avatar:imgname})}}/>
-                    <InputItem onChange = {(v) => this.onChange('title',v)}>发布职位</InputItem>
-                    <InputItem onChange = {(v) => this.onChange('company',v)}>公司名称</InputItem>
-                    <InputItem onChange = {(v) => this.onChange('money',v)}>薪资范围</InputItem>
-                    <TextareaItem onChange = {(v) => this.onChange('desc',v)} rows = {3} autoHeight title='职位要求' />
+                    <InputItem onChange = {(v) => this.onChange('title',v)}>应聘职位</InputItem>
+                    <TextareaItem onChange = {(v) => this.onChange('desc',v)} rows = {3} autoHeight title='个人简介' />
                     <Button type = 'primary' style = {{marginTop:20}} onClick = {() => {this.props.update(this.state)}}>保存</Button>
             </div>
         )

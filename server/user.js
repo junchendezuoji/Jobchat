@@ -12,6 +12,23 @@ Router.get('/list',function(req,res) {
         return res.json(doc)
     })
 })
+
+//完善信息请求
+Router.post('/update',function(req,res) {
+    const userid = req.cookies.userid
+    if(!userid) {
+        return json.dumps({code:1})
+    }
+    const body = req.body
+    User.findByIdAndUpdate(userid,body,function(err,doc) {
+        const data = Object.assign({},{
+            user:doc.user,
+            type:doc.type
+        },body)
+        return res.json({code:0,data})
+    })
+})
+
 //发送登录请求
 Router.post('/login',function(req,res) {
     const {user,password} = req.body;
