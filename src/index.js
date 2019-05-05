@@ -12,6 +12,7 @@ import PublisherInfo from './container/publisherinfo/publisherinfo'
 import HunterInfo from './container/hunterinfo/hunterinfo'
 import AuthRoute from './component/authroute/authroute'
 import reducers from  './reducer'
+import Dashboard from './component/dashboard/dashboard'
 import './config'
 import './index.css'
 
@@ -20,9 +21,7 @@ const store = createStore(reducers, compose(
 	window.devToolsExtension?window.devToolsExtension():f=>f
 ))
 
-function publisher () {
-    return <h1>haha</h1>
-}
+
 ReactDom.render(
     (<Provider store={store}>
         <BrowserRouter>
@@ -33,6 +32,8 @@ ReactDom.render(
                     <Route path='/hunterinfo' component={HunterInfo}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
+                    {/* 只要没有命中上面的就默认选择以下页面：发布者求职者的列表页以及个人中心和信息中心页 */}
+                    <Route component={Dashboard}></Route>
                 </Switch>   
             </div>
         </BrowserRouter>

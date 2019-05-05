@@ -2,3 +2,19 @@
     color: #f50;
     padding-left: 10px;
 }
+
+.am-tab-bar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.am-nav-bar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.page-content {
+    padding: 45px 5px;
+}
