@@ -9,7 +9,7 @@
     bottom: 0;
 }
 
-.am-nav-bar {
+.fixd-header .am-nav-bar {
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -17,4 +17,8 @@
 
 .page-content {
     padding: 45px 5px;
+}
+
+.am-wingblank {
+    margin: 0 !important;
 }

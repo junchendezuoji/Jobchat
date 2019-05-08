@@ -8,8 +8,9 @@ const _filter = {'password':0,'__v':0}
 //测试用户模型
 Router.get('/list',function(req,res) {
     //User.remove({},function(e,d){})//清楚所有数据
-    User.find({},function(err,doc) {
-        return res.json(doc)
+    const type = req.query.type
+    User.find({type},function(err,doc) {
+        return res.json({code:0,data:doc})
     })
 })
 

@@ -1,20 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Switch,Route } from 'react-router-dom'
 import { NavBar } from 'antd-mobile'
 import NavLinkBar from '../navlink/navlink'
+import Publisher from '../publisher/publisher'
+import Hunter from '../hunter/hunter'
+import User from '../user/user'
 
-function Publisher() {
-    return <h1>发布者首页</h1>
-}
-function Hunter() {
-    return <h1>求职者首页</h1>
-}
 function Msg() {
     return <h1>消息列表</h1>
 }
-function User() {
-    return <h1>个人中心</h1>
-}
+
 @connect(
     state => state,
     {}
@@ -63,7 +59,14 @@ export default class Dashboard extends React.Component {
 
         return (
             <div>
-                <NavBar mode='dark'>{navList.find(v => v.path == pathname).title}</NavBar>
+                <NavBar className='fixd-header' mode='dark'>{navList.find(v => v.path == pathname).title}</NavBar>
+                <div>
+                    <Switch>
+                        {navList.map(v => (
+                            <Route key={v.path} path={v.path} component={v.component}></Route>
+                        ))}
+                    </Switch>
+                </div>
                 <NavLinkBar data = {navList}></NavLinkBar>
             </div>
         )
