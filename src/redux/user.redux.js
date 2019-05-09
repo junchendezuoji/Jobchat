@@ -3,6 +3,7 @@ import { getRedirectPath } from '../util'
 const AUTH_SUCCESS = 'AUTH_SUCCESS' //验证
 const ERROR_MEG = 'ERROR_MSG'
 const LOAD_DATA = 'LOAD_DATA'
+const LOGOUT = 'LOGOUT'
 
 const initState = {
     redirectTo : '',//跳转到哪个页面
@@ -19,6 +20,8 @@ export function user(state = initState,action) {
             return {...state,isAuth:false,msg:action.msg}
         case LOAD_DATA:
             return {...state,...action.payload}
+        case LOGOUT:
+            return {...initState,redirectTo:'/login'}
         default:
             return state
     }
@@ -36,6 +39,10 @@ function errorMsg(msg) {
 
 export function loadData (userInfo) {
     return {type:LOAD_DATA,payload:userInfo}
+}
+
+export function logoutSubmit() {
+    return {type:LOGOUT}
 }
 
 //完善信息

@@ -22,3 +22,7 @@
 .am-wingblank {
     margin: 0 !important;
 }
+
+.am-button {
+    z-index: 1 !important;
+}

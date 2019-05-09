@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Result,List,WhiteSpace,Button } from 'antd-mobile'
+import browsercookie from 'browser-cookies'
+import { Redirect } from 'react-router-dom'
+import { Result,List,WhiteSpace,Button,Modal } from 'antd-mobile'
+import { logoutSubmit } from '../../redux/user.redux'
 
 @connect(
     state => state.user,
+    {logoutSubmit}
 )
 export default class User extends React.Component {
     constructor(props){
@@ -12,7 +16,15 @@ export default class User extends React.Component {
 	}
     
 	logout() {
-        alert(123)
+        const alert = Modal.alert
+        alert('注销','确认退出登录吗',[
+            {text: '取消',onPress:() => console.log('取消')},
+            {text: '确认',onPress:() => {
+                browsercookie.erase('userid')
+                window.location.href = window.location.href
+                //this.props.logoutSubmit()
+            }}
+        ])
     }
 
     render() {
@@ -26,7 +38,7 @@ export default class User extends React.Component {
                     title={props.user}
                     message={props.type == 'publisher' ? props.company : null}
                 />
-                <List renderHeader={() => '简介'} onClick={this.logout}>
+                <List renderHeader={() => '简介'}>
                     <Item>
                         {props.title}
                         {props.desc.split('\n').map(v => <Brief key={v}>{v}</Brief>)}
