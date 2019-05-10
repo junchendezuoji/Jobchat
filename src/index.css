@@ -26,3 +26,23 @@
 .am-button {
     z-index: 1 !important;
 }
+
+.am-card {
+    z-index: 1 !important;
+}
+
+#chat-page .chat-me .am-list-extra {
+    flex-basis: auto;
+}
+
+#chat-page .chat-me .am-list-content {
+    padding-right: 15px;
+    text-align: right;
+}
+
+.stick-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}

@@ -13,6 +13,7 @@ import HunterInfo from './container/hunterinfo/hunterinfo'
 import AuthRoute from './component/authroute/authroute'
 import reducers from  './reducer'
 import Dashboard from './component/dashboard/dashboard'
+import Chat from './component/chat/chat'
 import './config'
 import './index.css'
 
@@ -32,6 +33,7 @@ ReactDom.render(
                     <Route path='/hunterinfo' component={HunterInfo}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
+                    <Route path='/chat/:user' component={Chat}></Route>
                     {/* 只要没有命中上面的就默认选择以下页面：发布者求职者的列表页以及个人中心和信息中心页 */}
                     <Route component={Dashboard}></Route>
                 </Switch>   

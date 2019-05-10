@@ -56,10 +56,10 @@ export default class Dashboard extends React.Component {
                 component: User
             }
         ]
-
+        console.log(navList,pathname)
         return (
             <div>
-                <NavBar className='fixd-header' mode='dark'>{navList.find(v => v.path == pathname).title}</NavBar>
+                <NavBar className='fixd-header' mode='dard'>{navList.find(v=>v.path==pathname).title}</NavBar>
                 <div>
                     <Switch>
                         {navList.map(v => (
