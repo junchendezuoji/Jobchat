@@ -15,7 +15,9 @@
 - 项目启动，浏览器访问**localhost:8000**
   
   启动MongoDB
+  
   `node server.js` //启动webserver
+  
   `npm start` //启动项目
 - 打包编译生成静态资源
 
