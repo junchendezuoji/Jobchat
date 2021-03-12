@@ -40,7 +40,7 @@
     "promise": "8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.0.0-rc.2",
-    "react-dev-utils": "^4.0.1",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.0.0-rc.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^5.0.0",
